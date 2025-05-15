@@ -47,7 +47,7 @@ def get_billboard_date():
 def get_client():
     token_info = session.get("token_info")
     if not token_info:
-        redirect(url_for("get_auth"))
+        return redirect(url_for("get_auth"))
     expiration_time = session['start_time'] + session['expires_in']
 
     if time.time() > expiration_time:
